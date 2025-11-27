@@ -102,4 +102,60 @@ h1, h2, h3, h4, .font-serif {
 /* Pause animation on hover for readability */
 .testimonial-track:hover {
     animation-play-state: paused;
+
+}
+/* --- Styles for 1-Day Tour Page --- */
+
+:root {
+    --jungle-green: #1a472a;
+    --tiger-orange: #d97706;
+    --river-blue: #0f4c75;
+    --mist-gray: #f3f4f6;
+}
+
+h1, h2, h3, .font-heading {
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-text {
+    font-family: 'Cinzel', serif;
+}
+
+/* Diagonal wave clip path for hero section */
+.clip-path-wave {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Vertical Timeline Line */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: #cbd5e1;
+    z-index: 0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--jungle-green);
+    border-radius: 4px;
+}
+
+/* Subtle Leaf Pattern Background */
+.leaf-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a472a' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
