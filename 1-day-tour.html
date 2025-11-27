@@ -17,20 +17,66 @@
 </head>
 <body class="antialiased overflow-x-hidden text-slate-700 bg-slate-50">
 
-    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+    <nav class="fixed w-full z-50 transition-all duration-300 border-b bg-white/10 backdrop-blur-md border-white/10" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
-                    <span class="material-symbols-outlined text-green-700 text-4xl">forest</span>
-                    <span class="font-heading text-2xl font-bold text-green-900 tracking-wider">Sundarban<span class="text-orange-600">Safari</span></span>
+            <div class="flex justify-between items-center h-24">
+                <div class="flex items-center gap-2 group cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="w-10 h-10 bg-tiger-orange rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">directions_boat</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-2xl font-bold leading-none tracking-wide group-hover:text-tiger-orange transition-colors text-white" id="nav-logo-text">Sundarban</span>
+                        <span class="text-xs uppercase tracking-[0.2em] font-bold text-gray-200" id="nav-sub-text">Boat Safari</span>
+                    </div>
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html" class="text-gray-800 hover:text-green-700 font-medium transition">Home</a>
-                    <a href="#experience" class="text-gray-800 hover:text-green-700 font-medium transition">The Experience</a>
-                    <a href="#itinerary" class="text-gray-800 hover:text-green-700 font-medium transition">Itinerary</a>
-                    <a href="#food" class="text-gray-800 hover:text-green-700 font-medium transition">Food</a>
-                    <a href="#pricing" class="bg-green-700 text-white px-6 py-2 rounded-full font-bold hover:bg-green-800 transition transform hover:scale-105 shadow-lg">Book Now</a>
+                    <a class="nav-link hover:text-tiger-orange transition font-medium tracking-wide text-sm uppercase text-white" href="index.html">Home</a>
+                    <a class="nav-link hover:text-tiger-orange transition font-medium tracking-wide text-sm uppercase text-white" href="index.html#about">About Us</a>
+                    <div class="relative group h-full flex items-center">
+                        <button class="nav-link group-hover:text-tiger-orange transition font-medium tracking-wide text-sm uppercase flex items-center gap-1 focus:outline-none text-white">
+                            Packages
+                            <span class="material-symbols-outlined text-sm">expand_more</span>
+                        </button>
+                        <div class="nav-dropdown absolute top-full left-0 pt-4 w-72">
+                            <div class="bg-white rounded-xl shadow-2xl overflow-hidden border border-gray-100">
+                                <a class="block px-6 py-4 text-sm text-gray-800 hover:bg-orange-50 hover:text-tiger-orange border-b border-gray-100 transition" href="1-day-tour.html">
+                                    <span class="font-bold block">1 Day Sundarban Tour</span>
+                                    <span class="text-xs text-gray-500">Express Day Trip</span>
+                                </a>
+                                <a class="block px-6 py-4 text-sm text-gray-800 hover:bg-orange-50 hover:text-tiger-orange border-b border-gray-100 transition" href="1-night-2-days-tour.html">
+                                    <span class="font-bold block">1 Night 2 Days Package</span>
+                                    <span class="text-xs text-gray-500">Classic Jungle Stay</span>
+                                </a>
+                                <a class="block px-6 py-4 text-sm text-gray-800 hover:bg-orange-50 hover:text-tiger-orange transition" href="2-nights-3-days-tour.html">
+                                    <span class="font-bold block">2 Night 3 Days Package</span>
+                                    <span class="text-xs text-gray-500">Deep Jungle Adventure</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="nav-link hover:text-tiger-orange transition font-medium tracking-wide text-sm uppercase text-white" href="index.html#gallery">Gallery</a>
+                    <a class="nav-link hover:text-tiger-orange transition font-medium tracking-wide text-sm uppercase text-white" href="index.html#contact">Contact Us</a>
                 </div>
+                <div class="md:hidden">
+                    <button class="text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:hidden bg-safari-green absolute w-full border-t border-white/10 shadow-xl h-screen overflow-y-auto" id="mobile-menu">
+            <div class="px-4 py-6 space-y-4">
+                <a class="block text-white font-medium hover:text-tiger-orange text-lg" href="index.html">Home</a>
+                <a class="block text-white font-medium hover:text-tiger-orange text-lg" href="index.html#about">About Us</a>
+                <div class="border-l-2 border-white/20 pl-4 space-y-3">
+                    <p class="text-tiger-orange font-bold uppercase text-xs tracking-wider mb-2">Packages</p>
+                    <a class="block text-gray-300 hover:text-white" href="1-day-tour.html">1 Day Tour</a>
+                    <a class="block text-gray-300 hover:text-white" href="1-night-2-days-tour.html">1 Night 2 Days</a>
+                    <a class="block text-gray-300 hover:text-white" href="2-nights-3-days-tour.html">2 Nights 3 Days</a>
+                </div>
+                <a class="block text-white font-medium hover:text-tiger-orange text-lg" href="index.html#gallery">Gallery</a>
+                <a class="block text-white font-medium hover:text-tiger-orange text-lg" href="index.html#contact">Contact Us</a>
+                <button class="w-full bg-tiger-orange text-white py-4 rounded-lg font-bold mt-4" onclick="openBooking()">Book Your Trip</button>
             </div>
         </div>
     </nav>
@@ -407,10 +453,106 @@
          </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
-        <p>© 2025 Sundarban Boat Safari. All rights reserved.</p>
-        <p class="text-sm mt-2">Connecting you to nature, responsibly.</p>
+    <footer class="bg-[#051105] text-white pt-20 pb-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-tiger-orange rounded-full flex items-center justify-center text-white">
+                            <span class="material-symbols-outlined">directions_boat</span>
+                        </div>
+                        <span class="font-serif text-3xl font-bold">Sundarban Boat Safari</span>
+                    </div>
+                    <p class="text-gray-400 max-w-sm mb-6">
+                        We are dedicated to sustainable tourism in the Sundarban Biosphere Reserve. Experience nature in its purest form with the locals.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-tiger-orange transition" href="#"><span class="material-symbols-outlined">public</span></a>
+                        <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-tiger-orange transition" href="#"><span class="material-symbols-outlined">mail</span></a>
+                        <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-tiger-orange transition" href="#"><span class="material-symbols-outlined">call</span></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a class="hover:text-tiger-orange transition" href="1-day-tour.html">1 Day Tour</a></li>
+                        <li><a class="hover:text-tiger-orange transition" href="1-night-2-days-tour.html">2 Day Tour</a></li>
+                        <li><a class="hover:text-tiger-orange transition" href="2-nights-3-days-tour.html">3 Day Tour</a></li>
+                        <li><a class="hover:text-tiger-orange transition" href="index.html#testimonials">Reviews</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Contact Us</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-tiger-orange mt-1">location_on</span>
+                            <span>123, Canning Road,<br>Kolkata - 700001, WB</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-tiger-orange">phone</span>
+                            <span>+91 98765 43210</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-tiger-orange">email</span>
+                            <span>info@sundarbanboatsafari.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>© 2024 Sundarban Boat Safari. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a class="hover:text-white transition" href="#">Privacy Policy</a>
+                    <a class="hover:text-white transition" href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <div class="modal fixed inset-0 z-[100] flex items-center justify-center p-4" id="booking-modal">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeBooking()"></div>
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg relative z-10 modal-content overflow-hidden">
+            <div class="bg-safari-green p-6 flex justify-between items-center">
+                <h3 class="text-2xl font-bold text-white font-serif">Start Your Adventure</h3>
+                <button class="text-white hover:text-tiger-orange transition" onclick="closeBooking()">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="p-8">
+                <form class="space-y-4" onsubmit="event.preventDefault(); alert('We have received your request! A travel expert will call you shortly.'); closeBooking();">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Name</label>
+                            <input class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-safari-green outline-none" placeholder="Your Name" required="" type="text">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 mb-1">Phone</label>
+                            <input class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-safari-green outline-none" placeholder="+91..." required="" type="tel">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-1">Preferred Package</label>
+                        <select class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-safari-green outline-none">
+                            <option>1 Day Express</option>
+                            <option>1 Night / 2 Days (Classic)</option>
+                            <option>2 Nights / 3 Days (Deep Dive)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-1">Travel Date</label>
+                        <input class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-safari-green outline-none" type="date">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-1">Message</label>
+                        <textarea class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-safari-green outline-none h-24" placeholder="Specific requirements (Diet/Pickup)..."></textarea>
+                    </div>
+                    <button class="w-full bg-tiger-orange text-white py-4 rounded-xl font-bold hover:bg-orange-700 transition shadow-lg text-lg">
+                        Send Enquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script>
     (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
